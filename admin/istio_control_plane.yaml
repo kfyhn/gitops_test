@@ -5,11 +5,14 @@ metadata:
   name: istiocontrolplane
 spec:
   profile: default
-  prometheus:
-    enabled: true
-  grafana:
-    enabled: true
-  tracing:
-    enabled: true
-  kiali:
-    enabled: true
+  values:
+    mixer:
+      adapters:
+        prometheus:
+          enabled: true
+    grafana:
+      enabled: true
+    tracing:
+      enabled: true
+    kiali:
+      enabled: true
