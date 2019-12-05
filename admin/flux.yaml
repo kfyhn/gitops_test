@@ -210,6 +210,11 @@ spec:
         # make sure to set prometheus' annotation to scrape the port value.
         - --listen-metrics=:3031
 
+        # Sometimes Flux is hitting the GCR rate limiting. This lowers it significantly.
+        - --registry-rps=10
+        - --registry-burst=1
+
+
       # Optional DNS settings, configuring the ndots option may resolve
       # nslookup issues on some Kubernetes setups.
       # dnsPolicy: "None"
